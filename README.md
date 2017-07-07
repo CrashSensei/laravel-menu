@@ -93,7 +93,7 @@ Now, append Laravel Menu service provider to `providers` array in `config/app.ph
 	
 	...
         
-        'Lavary\Menu\ServiceProvider',
+        Lavary\Menu\ServiceProvider::class,
         
         ...
 
@@ -976,7 +976,7 @@ Menu::make('MyNavBar', function($menu){
 
   $menu->add('Home',     array('route'  => 'home.page', 'class' => 'navbar navbar-home', 'id' => 'home'));
   
-  $menu->group(array('style' => 'padding: 0', 'data-role' => 'navigation') function($m){
+  $menu->group(array('style' => 'padding: 0', 'data-role' => 'navigation'), function($m){
     
         $m->add('About',    array('route'  => 'page.about', 'class' => 'navbar navbar-about dropdown'));
         $m->add('services', array('action' => 'ServicesController@index'));
