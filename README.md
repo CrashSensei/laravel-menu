@@ -61,20 +61,9 @@ __For Laravel 4.x, check [version 1.5.0](https://github.com/lavary/laravel-menu/
 
 ## Installation
 
-In `require` key of `composer.json` file, add `lavary/laravel-menu": "dev-master`:
-
-```
-...
-"require": {
-	"laravel/framework": "5.1.*",
-	"lavary/laravel-menu": "dev-master"
-  }  
-```
-  
-Run the `composer update` command:
 
 ```bash
-composer update
+composer require lavary/laravel-menu
 ```
 
 Now, append Laravel Menu service provider to `providers` array in `config/app.php`.
@@ -1458,7 +1447,7 @@ You might encounter situations when some of your HTML properties are explicitly 
 ```php
 @foreach($items as $item)
   <li @if($item->hasChildren()) class="dropdown" @endif data-test="test">
-      <a href="{!! $item->url !!}">{!! $item->title !!} </a>
+      <a href="{!! $item->url() !!}">{!! $item->title !!} </a>
       @if($item->hasChildren())
         <ul class="dropdown-menu">
               @include('custom-menu-items', array('items' => $item->children()))
