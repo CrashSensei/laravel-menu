@@ -119,6 +119,11 @@ At the end of `config/app.php` add `'Menu'    => 'Lavary\Menu\Facade'` to the `$
 
 This registers the package with Laravel and creates an alias called `Menu`.
 
+To use your own settings, publish config.
+```bash
+php artisan vendor:publish --provider="Lavary\Menu\ServiceProvider"
+```
+
 
 ## Getting Started
 
